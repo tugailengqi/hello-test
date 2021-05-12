@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lengqi.aop.mapper.JournalMapper">
+  <resultMap id="BaseResultMap" type="com.lengqi.aop.model.Journal">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="modularType" jdbcType="INTEGER" property="modulartype" />
+    <result column="operationType" jdbcType="INTEGER" property="operationtype" />
+    <result column="operationTime" jdbcType="TIMESTAMP" property="operationtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `uid`, modularType, operationType, operationTime
+  </sql>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.lengqi.aop.model.Journal" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into journal (`uid`, modularType, operationType, 
+      operationTime)
+    values (10086, #{modulartype,jdbcType=INTEGER}, #{operationtype,jdbcType=INTEGER},
+      NOW())
+  </insert>
+
+</mapper>
